@@ -9,3 +9,7 @@ com:
     want : "zedong"
     webOriginHref :  http://10.25.26.187:4000
     mobileOriginHref : http://10.25.26.187:8080
+    ignoreHostUrl: /mobileUrl/*
+udf:
+  ignore-host-url: http://10.25.26.187:8004/mobileUrl/
+  ignore-url-pattern-type: ""

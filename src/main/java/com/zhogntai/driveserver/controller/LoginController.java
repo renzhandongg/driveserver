@@ -23,7 +23,7 @@ import java.util.Properties;
 
 @Controller
 public class LoginController{
-    @RequestMapping("index")
+    @RequestMapping("api")
 
     public String index() {
         return "index";

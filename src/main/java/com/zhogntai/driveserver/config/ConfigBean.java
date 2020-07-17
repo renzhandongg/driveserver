@@ -8,6 +8,15 @@ public class ConfigBean {
     private String want;
     private String webOriginHref;
     private String mobileOriginHref;
+    private String ignoreHostUrl;
+
+    public String getIgnoreHostUrl() {
+        return ignoreHostUrl;
+    }
+
+    public void setIgnoreHostUrl(String ignoreHostUrl) {
+        this.ignoreHostUrl = ignoreHostUrl;
+    }
 
     public String getWebOriginHref() {
         return webOriginHref;

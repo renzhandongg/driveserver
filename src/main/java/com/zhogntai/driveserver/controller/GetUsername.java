@@ -17,15 +17,11 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 public class GetUsername {
     @CrossOrigin
-    @RequestMapping(value = "/getUsername", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/getUsername", method = RequestMethod.GET)
     public JsonResult getUsername(HttpServletResponse response, HttpServletRequest request){
         Assertion assertion = (Assertion) request.getSession().getAttribute(AbstractCasFilter.CONST_CAS_ASSERTION);
         if(assertion!=null) {
             AttributePrincipal principal = assertion.getPrincipal();
-//            //设置响应头
-//            response.setHeader("Access-Control-Allow-Origin","http://127.0.0.1:4000");
-//            response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
-//            response.setHeader("Access-Control-Allow-Credentials","true");
             //获取用户名
             String userName = principal.getName();
             if(!("").equals(userName)){
