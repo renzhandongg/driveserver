@@ -1,8 +1,12 @@
 package com.zhogntai.driveserver.dao;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class Series {
     private int id;
+//    @ApiModelProperty(hidden = true)
     private int deptid;
+    @ApiModelProperty(value = "名称")
     private String name;
 
     public Series(int id, int deptid, String name) {

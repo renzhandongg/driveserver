@@ -17,4 +17,7 @@ public interface DepartmentalExpenditureMapper {
 
     @Select("select xAxis from departmentalExpenditure")
     List<String> getXAxis();
+
+    @Select("select xAxis,percentage,expenditure,budget from departmentalExpenditure where id=#{id}")
+    Map<String,Object> getDataForId(int id);
 }

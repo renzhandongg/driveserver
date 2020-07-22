@@ -26,17 +26,12 @@ public class DeptSeriesController {
     SeriesMapper seriesMapper;
 
     @CrossOrigin()
-    @RequestMapping(value = "/getSeries", method = RequestMethod.GET)
-
+    @RequestMapping(value = "/api/getSeries", method = RequestMethod.GET,produces="application/json")
     public Map getSeries(HttpServletResponse response, HttpServletRequest request) {
         Assertion assertion = (Assertion) request.getSession().getAttribute(AbstractCasFilter.CONST_CAS_ASSERTION);
         Map res = new HashMap();
         if(assertion!=null) {
             AttributePrincipal principal = assertion.getPrincipal();
-            //设置响应头
-            response.setHeader("Access-Control-Allow-Origin","http://127.0.0.1:4000");
-            response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
-            response.setHeader("Access-Control-Allow-Credentials","true");
 
             //获取用户名
             String userName = principal.getName();
@@ -65,4 +60,5 @@ public class DeptSeriesController {
         }
         return res;
     }
+
 }

@@ -1,10 +1,17 @@
 package com.zhogntai.driveserver.dao;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class DepartmentalExpenditure {
+    @ApiModelProperty(value = "id")
     private int id;
+    @ApiModelProperty(value = "部门")
     private String xAxis;
+    @ApiModelProperty(value = "百分比")
     private int percentage;
+    @ApiModelProperty(value = "支出")
     private int expenditure;
+    @ApiModelProperty(value = "预算")
     private int budget;
 
     public DepartmentalExpenditure() {

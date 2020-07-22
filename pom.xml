@@ -82,6 +82,26 @@
             <optional>true</optional>
         </dependency>
 
+        <!--基于Spring的组件swagger-springmvc，用于将swagger集成到springmvc中来 -->
+        <!--springfox-swagger2依然是依赖OSA规范文档，也就是一个描述API的json文件，而这个组件的功能就是帮助我们自动生成这个json文件 -->
+        <!--springfox-swagger-ui就是将这个json文件解析出来，用一种更友好的方式呈现出来。 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+            <version>1.8.5</version>
+        </dependency>
     </dependencies>
 
     <build>

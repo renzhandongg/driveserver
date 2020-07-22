@@ -43,7 +43,6 @@ public class CasConfiguration {
         // 设定加载的顺序
         registration.addUrlPatterns("/mobileUrl/","/we/*");
         registration.setOrder(1);
-        System.out.println("init filter");
         return registration;
     }
 
