@@ -8,7 +8,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @SpringBootApplication
-//@EnableCasClient
+@EnableCasClient
 @EnableConfigurationProperties({ConfigBean.class})
 @ServletComponentScan(basePackages = {"com.zhogntai.driveserver.filter"})
 public class DriveserverApplication {

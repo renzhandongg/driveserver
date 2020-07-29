@@ -12,6 +12,7 @@ server:
 #  servlet:
 #   context-path : /api
 #配置添加
+xtpUrl : http://10.25.102.194:8080/reconmendSys/report/
 logging:
   config: classpath:logback-dev.xml
 spring.mvc.static-path-pattern : /**
