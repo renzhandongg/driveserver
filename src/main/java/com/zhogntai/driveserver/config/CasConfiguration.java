@@ -14,36 +14,36 @@ import org.springframework.context.annotation.Configuration;
 import java.util.HashMap;
 import java.util.Map;
 
-@Configuration
-public class CasConfiguration {
-    @Value("${cas.server-login-url}")
-    private String casServerLoginUrl;
-
-    @Value("${cas.client-host-url}")
-    private String casClientHostUrl;
-
-    @Autowired
-    ConfigBean configBean;
-
-    /**
-     * description:授权过滤器
-     * ignoreUrlPatternType 使用CAS现成的正则表达式过滤策略
-     */
-    @Bean
-    public FilterRegistrationBean filterAuthenticationRegistration() {
-        FilterRegistrationBean registration = new FilterRegistrationBean();
-        registration.setFilter(new AuthenticationFilter());
-        // 设定匹配的路径
-        registration.addUrlPatterns("/api/*");
-        Map<String,String> initParameters = new HashMap<String, String>();
-        initParameters.put("casServerLoginUrl", casServerLoginUrl);
-        initParameters.put("serverName", casClientHostUrl);
-        // 忽略 /logoutSuccess 的路径
-        registration.setInitParameters(initParameters);
-        // 设定加载的顺序
-        registration.addUrlPatterns("/mobileUrl/","/we/*");
-        registration.setOrder(1);
-        return registration;
-    }
-
-}
+//@Configuration
+//public class CasConfiguration {
+//    @Value("${cas.server-login-url}")
+//    private String casServerLoginUrl;
+//
+//    @Value("${cas.client-host-url}")
+//    private String casClientHostUrl;
+//
+//    @Autowired
+//    ConfigBean configBean;
+//
+//    /**
+//     * description:授权过滤器
+//     * ignoreUrlPatternType 使用CAS现成的正则表达式过滤策略
+//     */
+//    @Bean
+//    public FilterRegistrationBean filterAuthenticationRegistration() {
+//        FilterRegistrationBean registration = new FilterRegistrationBean();
+//        registration.setFilter(new AuthenticationFilter());
+//        // 设定匹配的路径
+//        registration.addUrlPatterns("/api/*");
+//        Map<String,String> initParameters = new HashMap<String, String>();
+//        initParameters.put("casServerLoginUrl", casServerLoginUrl);
+//        initParameters.put("serverName", casClientHostUrl);
+//        // 忽略 /logoutSuccess 的路径
+//        registration.setInitParameters(initParameters);
+//        // 设定加载的顺序
+//        registration.addUrlPatterns("/mobileUrl/","/we/*");
+//        registration.setOrder(1);
+//        return registration;
+//    }
+//
+//}
